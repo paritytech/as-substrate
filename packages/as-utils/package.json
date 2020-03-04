@@ -1,0 +1,22 @@
+{
+  "name": "@substrate/as-utils",
+  "version": "0.0.1",
+  "description": "A collection of useful utility functions in AssemblyScript.",
+  "author": "Stefanie Doll",
+  "license": "Apache-2.0",
+  "main": "js/index.js",
+  "types": "assembly/index.ts",
+  "scripts": {
+    "build:optimized": "asc assembly/index.ts -b build/utils.wasm -t build/utils.wat --importMemory --noAssert --use abort=  --sourceMap --validate --optimize",
+    "build:tsd": "asc assembly/index.ts -d build/index.d.ts",
+    "build": "yarn build:tsd && yarn build:optimized",
+    "test": "asp"
+  },
+  "dependencies": {
+    "@assemblyscript/loader": "^0.9.2"
+  },
+  "devDependencies": {
+    "@as-pect/cli": "^2.7.0",
+    "assemblyscript": "^0.9.2"
+  }
+}
