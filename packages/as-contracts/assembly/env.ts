@@ -60,7 +60,7 @@ export declare function ext_get_runtime_storage(
   key_len: i32
 ): void;
 
-// Retrieve the value under the given key from the storage and return 0.
+// Retrieve the value under the given key from the storage or return 0.
 export declare function ext_get_storage(
   key_ptr: i32
 ): i32;

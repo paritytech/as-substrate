@@ -1,3 +1,4 @@
-/// <reference path="../../../node_modules/assemblyscript/std/assembly/index.d.ts" />
-
-export { ContractLibrary } from './lib';
+export { contract } from './lib/contract';
+export { contractUtils } from './lib/contract-utils';
+export { dev } from './lib/dev';
+export { storage } from './lib/storage';

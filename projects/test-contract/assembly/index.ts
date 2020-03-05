@@ -2,7 +2,7 @@
 
 import { u128 } from "as-bignum";
 
-import { ContractLibrary } from "@substrate/as-contracts";
+import { contract, storage } from "@substrate/as-contracts";
 import { numberToBytes } from "@substrate/as-utils";
 
 const COUNTER_KEY = (new Uint8Array(32)).fill(1);
@@ -15,7 +15,7 @@ enum Action {
 
 function handle(input: Uint8Array): Uint8Array {
   const value = new Uint8Array(0);
-  const counter = ContractLibrary.getStorage(COUNTER_KEY);
+  const counter = storage.get(COUNTER_KEY);
 
   const dataCounter = new DataView(counter.buffer);
   const counterValue: u32 = dataCounter.byteLength
@@ -23,27 +23,30 @@ function handle(input: Uint8Array): Uint8Array {
     : 0;
 
   switch (input[0]) {
-    case Action.Inc:
+    case Action.Inc: {
       const by = load<u32>(input.dataStart, 1);
       const newCounter = numberToBytes(counterValue + by);
-      ContractLibrary.setStorage(COUNTER_KEY, newCounter);
+      storage.set(COUNTER_KEY, newCounter);
       break;
-    case Action.Get:
-      const value2 = (new Uint8Array(5)).fill(165);
-      if (value2.length) return value2;
+    }
+    case Action.Get: {
+      const value = (new Uint8Array(5)).fill(165);
+      if (value.length) return value;
       break;
-    case Action.SelfEvict:
+    }
+    case Action.SelfEvict: {
       const allowance = u128.from<u32>(0);
-      ContractLibrary.setRentAllowance(allowance);
+      contract.setRentAllowance(allowance);
       break;
+    }
   }
   return value;
 }
 
 export function call(): u32 {
-  const input = ContractLibrary.getScratchBuffer();
+  const input = storage.getScratchBuffer();
   const output = handle(input);
-  ContractLibrary.setScratchBuffer(output);
+  storage.setScratchBuffer(output);
   return 0;
 }
 
