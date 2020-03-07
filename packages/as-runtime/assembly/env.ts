@@ -50,17 +50,6 @@ export declare function ext_misc_print_utf8_version_1(data: i64): void;
 export declare function ext_misc_runtime_version_version_1(data: i64): i64;
 
 /**
- * Offchain: The Oﬀchain Workers allow the execution of long-running and possibly non-deterministic
- * tasks which could otherwise require longer than the block execution time. 
-*/
-export declare function ext_offchain_is_validator_version_1(): i32;
-export declare function ext_offchain_local_storage_compare_and_set_version_1(kind: i32, key: i64, old_value: i64, new_value: i64): i32;
-export declare function ext_offchain_local_storage_get_version_1(kind: i32, key: i64): i64;
-export declare function ext_offchain_local_storage_set_version_1(kind: i32, key: i64, value: i64): void;
-export declare function ext_offchain_network_state_version_1(): i64;
-export declare function ext_offchain_submit_transaction_version_1(data: i64): i64;
-
-/**
  * Storage: Interface for accessing the storage from within the runtime.
 */
 export declare function ext_storage_changes_root_version_1(parent_hash: i64): i64;
