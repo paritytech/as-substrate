@@ -1,6 +1,7 @@
 /// <reference path="../../../../node_modules/assemblyscript/std/assembly/index.d.ts" />
 
 import {
+  ext_clear_storage,
   ext_get_storage,
   ext_scratch_read,
   ext_scratch_size,
@@ -80,5 +81,9 @@ export namespace storage{
    */
   export function setScratchBuffer(data: Uint8Array): void {
     ext_scratch_write(data.dataStart, data.length);
+  }
+
+  export function clear(key: Uint8Array): void {
+    ext_clear_storage(key.dataStart);
   }
 }

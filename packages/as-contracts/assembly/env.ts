@@ -30,6 +30,8 @@ export declare function ext_call(
 // Stores the address of the caller into the scratch buffer.
 export declare function ext_caller(): void;
 
+export declare function ext_clear_storage(key_ptr: i32): void;
+
 // Deposit a contract event with the data buffer and optional list of topics. There is a limit
 // on the maximum number of topics specified by `max_event_topics`.
 export declare function ext_deposit_event(
@@ -141,8 +143,7 @@ export declare function ext_set_rent_allowance(
 // Change the value at the given key in the storage or remove the entry.
 export declare function ext_set_storage(
   key_ptr: i32,
-  value_non_null:
-  i32, value_ptr: i32,
+  value_ptr: i32,
   value_len: i32
 ): void;
 
