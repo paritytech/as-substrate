@@ -67,6 +67,12 @@ export declare function ext_get_storage(
   key_ptr: i32
 ): i32;
 
+export declare function ext_hash_sha2_256(
+  input_ptr: i32,
+  input_len: i32,
+  output_ptr: i32)
+: void;
+
 // Instantiate a contract with the specified code hash.
 export declare function ext_instantiate(
   code_hash_ptr: i32,
