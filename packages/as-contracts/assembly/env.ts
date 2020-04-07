@@ -30,6 +30,7 @@ export declare function ext_call(
 // Stores the address of the caller into the scratch buffer.
 export declare function ext_caller(): void;
 
+// Clear the value at the given key in the contract storage.
 export declare function ext_clear_storage(key_ptr: i32): void;
 
 // Deposit a contract event with the data buffer and optional list of topics. There is a limit
@@ -66,6 +67,34 @@ export declare function ext_get_runtime_storage(
 export declare function ext_get_storage(
   key_ptr: i32
 ): i32;
+
+// Computes the BLAKE2 128-bit hash on the given input buffer.
+export declare function ext_hash_blake2_128(
+  input_ptr: i32,
+  input_len: i32,
+  output_ptr: i32)
+: void;
+
+// Computes the BLAKE2 256-bit hash on the given input buffer.
+export declare function ext_hash_blake2_256(
+  input_ptr: i32,
+  input_len: i32,
+  output_ptr: i32)
+: void;
+
+// Computes the KECCAK 256-bit hash on the given input buffer.
+export declare function ext_hash_keccak_256(
+  input_ptr: i32,
+  input_len: i32,
+  output_ptr: i32)
+: void;
+
+// Computes the SHA2 256-bit hash on the given input buffer.
+export declare function ext_hash_sha2_256(
+  input_ptr: i32,
+  input_len: i32,
+  output_ptr: i32)
+: void;
 
 export declare function ext_hash_sha2_256(
   input_ptr: i32,
