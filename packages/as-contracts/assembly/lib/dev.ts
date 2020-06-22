@@ -8,6 +8,6 @@ export namespace dev {
   export function printLine(value: string): void {
     const string = String.UTF8.encode(value);
     const stringArray = Uint8Array.wrap(string);
-    ext_println(stringArray.dataStart, string.byteLength);
+    ext_println(stringArray.dataStart as i32, string.byteLength);
   }
 } 

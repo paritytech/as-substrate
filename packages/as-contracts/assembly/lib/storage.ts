@@ -28,10 +28,10 @@ export namespace storage{
    */
   export function set(key: Uint8Array, value: Uint8Array | null): void {
     if(key.length === 32) {
-      const pointer = value ? value!.dataStart : 0;
+      const pointer = value!.dataStart as i32 || 0;
       const length = value ? value.length : 0;
     
-      ext_set_storage(key.dataStart, pointer, length);
+      ext_set_storage(key.dataStart as i32, pointer, length);
     }
   }
 
@@ -42,14 +42,14 @@ export namespace storage{
    */
   export function get(key: Uint8Array): Uint8Array {
      // @TODO check for key.length 32 
-    const result = ext_get_storage(key.dataStart);
+    const result = ext_get_storage(key.dataStart as i32);
     let value = new Uint8Array(0);
 
     if (result === StorageResult.Value) {
       const size = ext_scratch_size();
       if (size > 0) {
         value = new Uint8Array(size);
-        ext_scratch_read(value.dataStart, 0, size);
+        ext_scratch_read(value.dataStart as i32, 0, size);
       }
     }
     return value;
@@ -66,7 +66,7 @@ export namespace storage{
   
     if (size > 0) {
       value = new Uint8Array(size);
-      ext_scratch_read(value.dataStart, 0, size);
+      ext_scratch_read(value.dataStart as i32, 0, size);
     }
     return value;
   }
@@ -79,10 +79,10 @@ export namespace storage{
    *  of zero clears the scratch buffer.
    */
   export function setScratchBuffer(data: Uint8Array): void {
-    ext_scratch_write(data.dataStart, data.length);
+    ext_scratch_write(data.dataStart as i32, data.length);
   }
 
   export function clear(key: Uint8Array): void {
-    ext_clear_storage(key.dataStart);
+    ext_clear_storage(key.dataStart as i32);
   }
 }
