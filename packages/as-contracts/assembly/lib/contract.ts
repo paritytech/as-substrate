@@ -112,6 +112,6 @@ export namespace contract {
    */ 
   export function setRentAllowance(value: u128): void {
     const valueBuffer = value.toUint8Array();
-    ext_set_rent_allowance(valueBuffer.dataStart, valueBuffer.length);
+    ext_set_rent_allowance(valueBuffer.dataStart as i32, valueBuffer.length);
   }
 }

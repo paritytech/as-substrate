@@ -5,7 +5,7 @@
   "author": "Stefanie Doll",
   "license": "Apache-2.0",
   "scripts": {
-    "build:optimized": "asc assembly/index.ts -b build/types.wasm -t build/types.wat --importMemory --noAssert --use abort=  --sourceMap --validate --optimize",
+    "build:optimized": "asc assembly/index.ts -b build/types.wasm -t build/types.wat --importMemory --noAssert --use abort=  --sourceMap --optimize",
     "build:tsd": "asc assembly/index.ts -d build/index.d.ts",
     "build": "yarn build:tsd && yarn build:optimized",
     "test": "asp"

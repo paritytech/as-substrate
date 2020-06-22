@@ -22,7 +22,7 @@ export namespace crypto {
 
   export function blake2b128(value: Uint8Array): Uint8Array {
     const sha256 = new Uint8Array(32);
-    ext_hash_blake2_128(value.dataStart, value.length, sha256.dataStart)
+    ext_hash_blake2_128(value.dataStart as i32, value.length, sha256.dataStart as i32)
     return sha256;
   }
 
@@ -34,7 +34,7 @@ export namespace crypto {
 
   export function blake2b256(value: Uint8Array): Uint8Array {
     const sha256 = new Uint8Array(32);
-    ext_hash_blake2_256(value.dataStart, value.length, sha256.dataStart)
+    ext_hash_blake2_256(value.dataStart as i32, value.length, sha256.dataStart as i32)
     return sha256;
   }
 
@@ -46,7 +46,7 @@ export namespace crypto {
 
   export function keccack256(value: Uint8Array): Uint8Array {
     const sha256 = new Uint8Array(32);
-    ext_hash_keccak_256(value.dataStart, value.length, sha256.dataStart)
+    ext_hash_keccak_256(value.dataStart as i32, value.length, sha256.dataStart as i32)
     return sha256;
   }
 
@@ -58,7 +58,7 @@ export namespace crypto {
 
   export function sha256(value: Uint8Array): Uint8Array {
     const sha256 = new Uint8Array(32);
-    ext_hash_sha2_256(value.dataStart, value.length, sha256.dataStart)
+    ext_hash_sha2_256(value.dataStart as i32, value.length, sha256.dataStart as i32)
     return sha256;
   }
 }
