@@ -12,14 +12,14 @@
     "test": "asp"
   },
   "dependencies": {
-    "@assemblyscript/loader": "^0.9.1",
-    "as-bignum": "^0.1.5"
+    "@assemblyscript/loader": "^0.10.1"
   },
   "devDependencies": {
     "@substrate/as-types": "0.0.1",
     "@substrate/as-utils": "0.0.1",
-    "@as-pect/cli": "^2.7.0",
-    "assemblyscript": "^0.9.2"
+    "@as-pect/cli": "^4.0.0",
+    "as-bignum": "^0.2.2",
+    "assemblyscript": "0.12.3"
   },
   "releaseFiles": [
     "assembly/",
