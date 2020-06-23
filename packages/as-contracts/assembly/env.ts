@@ -42,26 +42,11 @@ export declare function ext_deposit_event(
   data_len: i32
 ): void;
 
-// Decodes the given buffer as a `T::Call` and adds it to the list
-// of to-be-dispatched calls.
-export declare function ext_dispatch_call(
-  call_ptr: i32,
-  call_len: i32
-): void;
-
 // Stores the amount of gas left into the scratch buffer.
 export declare function ext_gas_left(): void;
 
 // Stores the gas price for the current transaction into the scratch buffer.
-export declare function ext_gas_price(): void;
-
-// Retrieve the value under the given key from the **runtime** storage and return 0.
-// If there is no entry under the given key then this function will return 1 and
-// clear the scratch buffer.
-export declare function ext_get_runtime_storage(
-  key_ptr: i32,
-  key_len: i32
-): void;
+export declare function ext_gas_price(gas: u64,): void;
 
 // Retrieve the value under the given key from the storage or return 0.
 export declare function ext_get_storage(
