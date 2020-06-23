@@ -19,7 +19,6 @@
   },
   "scripts": {
     "clean": "rm -rf node_modules",
-    "build:sh": "yarn workspaces ./build.sh",
     "build": "yarn workspaces run build",
     "test": " yarn workspaces run test"
   }
