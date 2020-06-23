@@ -1,13 +1,13 @@
 {
   "name": "as-substrate",
   "version": "0.0.1",
-  "description": "Collection of projects written in AssemblyScript",
+  "description": "Collection of Substrate projects written in AssemblyScript",
   "author": "Stefanie Doll",
   "license": "Apache-2.0",
   "private": true,
   "workspaces": [
     "packages/*",
-    "projects/*"
+    "contracts/*"
   ],
   "dependencies": {
     "yarn": "^1.21.1"

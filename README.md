@@ -14,7 +14,7 @@ This repository is using yarn workspaces.
 **Clean up repositories**
 `$ yarn clean`
 
-**Compile all packages and projects to wasm:**
+**Compile all packages, projects and contracts to wasm:**
 `$ yarn build`
 
 **Run all `/packages/*` tests with:**
