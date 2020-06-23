@@ -6,16 +6,17 @@
   "license": "Apache-2.0",
   "ascMain": "assembly/index.ts",
   "scripts": {
-    "build:optimized": "asc assembly/index.ts -b build/contract.wasm -t build/contract.wat --importMemory --noAssert --use abort=  --sourceMap --optimize",
+    "build:optimized": "asc assembly/index.ts -b build/as-contracts.wasm -t build/as-contracts.wat --importMemory --noAssert --use abort=  --sourceMap --optimize",
+    "build:sh": "./build.sh",
     "build:tsd": "asc assembly/index.ts -d build/index.d.ts",
-    "build": "yarn build:tsd && yarn build:optimized",
+    "build": "yarn build:tsd && yarn build:optimized && yarn build:sh",
+    "clean": "rm -rf node_modules",
     "test": "asp"
   },
   "dependencies": {
     "@assemblyscript/loader": "^0.10.1"
   },
   "devDependencies": {
-    "@substrate/as-types": "0.0.1",
     "@substrate/as-utils": "0.0.1",
     "@as-pect/cli": "^4.0.0",
     "as-bignum": "^0.2.2",

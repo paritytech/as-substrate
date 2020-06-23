@@ -1,6 +1,6 @@
 {
   "extends": "../../../../node_modules/assemblyscript/std/assembly.json",
   "include": [
-    "./**/*.ts"
+    "**/*.ts", , "../../as-utils/assembly/index.ts", "../../as-utils/assembly/numberToBytes.ts""../../as-utils/assembly/arrayToUint8Array.ts"
   ]
 }
