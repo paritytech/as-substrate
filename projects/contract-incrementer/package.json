@@ -7,7 +7,7 @@
   "types": "build/index.d.ts",
   "license": "Apache-2.0",
   "scripts": {
-    "build:optimized": "asc assembly/index.ts -b build/contract-incrementer.wasm -t build/contract-incrementer.wat --importMemory --noAssert --use abort= --optimize",
+    "build:optimized": "asc assembly/index.ts -b build/contract-incrementer-raw.wasm -t build/contract-incrementer-raw.wat --importMemory --noAssert --use abort= --optimize",
     "build:sh": "./build.sh",
     "build:tsd": "asc assembly/index.ts -d build/index.d.ts",
     "build": "yarn build:optimized && yarn build:tsd && yarn build:sh",
