@@ -1,23 +1,25 @@
 {
   "name": "@substrate/as-utils",
   "version": "0.0.1",
-  "description": "A collection of useful utility functions in AssemblyScript.",
+  "description": "Set of AssemblyScript utility functions for as-substrate packages",
   "author": "Stefanie Doll",
   "license": "Apache-2.0",
-  "main": "js/index.js",
-  "types": "assembly/index.ts",
+  "ascMain": "assembly/index.ts",
   "scripts": {
-    "build:optimized": "asc assembly/index.ts -b build/utils.wasm -t build/utils.wat --importMemory --noAssert --use abort=  --sourceMap --optimize",
+    "build:optimized": "asc assembly/index.ts -b build/as-utils.wasm -t build/as-utils.wat --importMemory --noAssert --use abort=  --sourceMap --optimize",
     "build:tsd": "asc assembly/index.ts -d build/index.d.ts",
     "build": "yarn build:tsd && yarn build:optimized",
+    "clean": "rm -rf node_modules",
     "test": "asp"
-  },
-  "dependencies": {
-    "@assemblyscript/loader": "^0.10.1"
   },
   "devDependencies": {
     "@as-pect/cli": "^4.0.0",
     "as-bignum": "^0.2.2",
     "assemblyscript": "0.12.3"
-  }
+  },
+  "releaseFiles": [
+    "assembly/",
+    "README.md",
+    "LICENSE"
+  ]
 }

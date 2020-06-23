@@ -1,3 +1,3 @@
-# @polkadot/as-utils
+# @substrate/as-utils
 
-A collection of useful utility functions in AssemblyScript.
+A collection of useful utility functions in for AS-Substrate packages.
