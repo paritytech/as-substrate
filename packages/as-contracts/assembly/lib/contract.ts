@@ -9,8 +9,6 @@ import { numberToBytes } from '@substrate/as-utils';
 // import {
 //   ext_call,
 //   ext_deposit_event,
-//   ext_dispatch_call,
-//   ext_get_runtime_storage,
 //   ext_instantiate,
 //   ext_restore_to,
 //   ext_return
@@ -90,8 +88,8 @@ export namespace contract {
    * @description
    * Returns the gas price for the current transaction.
    */
-  export function getGasPrice(): Uint8Array {
-    ext_gas_price();
+  export function getGasPrice(gas: u64): Uint8Array {
+    ext_gas_price(gas);
     return storage.getScratchBuffer();
   }
 
