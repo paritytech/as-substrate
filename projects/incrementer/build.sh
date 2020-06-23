@@ -2,7 +2,7 @@
 
 set -e
 
-PROJNAME=incrementer
+PROJNAME=contract-incrementer
 
 cat build/$PROJNAME.wat | sed "s/(import \"env\" \"memory\" (memory \$0 1))/(import \"env\" \"memory\" (memory \$0 2 16))/" > build/$PROJNAME-fixed.wat
 
