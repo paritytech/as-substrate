@@ -1,7 +1,7 @@
 # Incrementer example
 
-**A basic Parity Substrate `srml-contract` smart contract**
-Written in AssemblyScript
+This simple demo contract. It has a `u32` value that can
+be incremented by the input value using the `inc` message.
 
 ### How to use it
 

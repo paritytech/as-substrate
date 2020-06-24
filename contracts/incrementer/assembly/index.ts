@@ -3,7 +3,7 @@
 import { u128 } from "as-bignum";
 
 import { contract, storage } from "@substrate/as-contracts";
-import { numberToBytes } from "@substrate/as-utils";
+import { toBytes } from "@substrate/as-utils";
 
 const COUNTER_KEY = (new Uint8Array(32)).fill(1);
 
@@ -25,7 +25,7 @@ function handle(input: Uint8Array): Uint8Array {
   switch (input[0]) {
     case Action.Inc: {
       const by = load<u32>(input.dataStart, 1);
-      const newCounter = numberToBytes(counterValue + by);
+      const newCounter = toBytes(counterValue + by);
       storage.set(COUNTER_KEY, newCounter);
       break;
     }
