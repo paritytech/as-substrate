@@ -2,7 +2,7 @@
 /// <reference path="../../../../node_modules/@substrate/as-utils/build/index.d.ts" />
 
 import { u128 } from "as-bignum";
-import { numberToBytes } from '@substrate/as-utils';
+import { toBytes } from '@substrate/as-utils';
 
 // // Implementation missing for:
 
