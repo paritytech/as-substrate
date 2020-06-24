@@ -7,9 +7,11 @@
   "types": "build/index.d.ts",
   "license": "GPL-3.0",
   "scripts": {
-    "build:optimized": "asc assembly/index.ts -b build/flipper.wasm -t build/flipper.wat --runtime half --importMemory --noAssert --use abort= --optimize",
+    "build:optimized": "asc assembly/index.ts -b build/flipper-raw.wasm -t build/flipper-raw.wat --runtime half --importMemory --noAssert --use abort= --optimize",
+    "build:sh": "./build.sh",
     "build:tsd": "asc assembly/index.ts -d build/index.d.ts",
-    "build": "yarn build:optimized && yarn build:tsd"
+    "build": "yarn build:optimized && yarn build:tsd && yarn build:sh",
+    "clean": "rm -rf node_modules && rm -rf build"
   },
   "dependencies": {
     "as-bignum": "^0.2.2",

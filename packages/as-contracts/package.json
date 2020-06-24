@@ -10,7 +10,7 @@
     "build:sh": "./build.sh",
     "build:tsd": "asc assembly/index.ts -d build/index.d.ts",
     "build": "yarn build:tsd && yarn build:optimized && yarn build:sh",
-    "clean": "rm -rf node_modules",
+    "clean": "rm -rf node_modules && rm -rf build",
     "test": "asp"
   },
   "dependencies": {

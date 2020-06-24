@@ -1,5 +1,5 @@
 {
-  "name": "@substrate/incrementer",
+  "name": "@as-contracts/incrementer-example",
   "version": "0.0.1",
   "description": "Example AS-Substrate incrementer contract",
   "author": "Stefanie Doll",

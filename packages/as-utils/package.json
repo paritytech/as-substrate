@@ -9,7 +9,7 @@
     "build:optimized": "asc assembly/index.ts -b build/as-utils.wasm -t build/as-utils.wat --importMemory --noAssert --use abort=  --sourceMap --optimize",
     "build:tsd": "asc assembly/index.ts -d build/index.d.ts",
     "build": "yarn build:tsd && yarn build:optimized",
-    "clean": "rm -rf node_modules",
+    "clean": "rm -rf node_modules && rm -rf build",
     "test": "asp"
   },
   "devDependencies": {

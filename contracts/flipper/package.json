@@ -1,5 +1,5 @@
 {
-  "name": "@substrate/flipper",
+  "name": "@as-contracts/flipper-example",
   "version": "0.0.1",
   "description": "Example AS-Substrate flipper contract",
   "author": "Stefanie Doll",
