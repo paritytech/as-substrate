@@ -5,33 +5,34 @@ import { u128 } from "as-bignum";
 import { contract, storage } from "@substrate/as-contracts";
 import { toBytes } from "@substrate/as-utils";
 
-const COUNTER_KEY = (new Uint8Array(32)).fill(1);
+const FLIPPER_KEY = (new Uint8Array(32)).fill(2);
 
 enum Action {
-  Inc,
+  Flip,
   Get,
   SelfEvict
 }
 
 function handle(input: Uint8Array): Uint8Array {
   const value = new Uint8Array(0);
-  const counter = storage.get(COUNTER_KEY);
+  const flipper = storage.get(FLIPPER_KEY);
 
-  const dataCounter = new DataView(counter.buffer);
-  const counterValue: u32 = dataCounter.byteLength
-    ? dataCounter.getUint32(0, true)
-    : 0;
+  const dataFlipper = new DataView(flipper.buffer);
+  const flipperValue = dataFlipper.byteLength ? dataFlipper.getUint8(0) : 0;
 
+  // Get action from first byte of the input U8A
   switch (input[0]) {
-    case Action.Inc: {
-      const by = load<u32>(input.dataStart, 1);
-      const newCounter = toBytes(counterValue + by);
-      storage.set(COUNTER_KEY, newCounter);
+    case Action.Flip: {
+      // Flip the flipper value in storage
+      const newFlipperBool = !flipperValue;
+      const newFlipperValue = toBytes(newFlipperBool);
+
+      storage.set(FLIPPER_KEY, newFlipperValue);
       break;
     }
     case Action.Get: {
-      const value = (new Uint8Array(5)).fill(165);
-      if (value.length) return value;
+      // return the flipper value from storage
+      if (flipper.length) return flipper;
       break;
     }
     case Action.SelfEvict: {
@@ -51,5 +52,6 @@ export function call(): u32 {
 }
 
 export function deploy(): u32 {
+  storage.set(FLIPPER_KEY, toBytes(false));
   return 0;
 }

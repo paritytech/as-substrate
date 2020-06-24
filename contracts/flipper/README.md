@@ -1,9 +1,7 @@
-# Incrementer example
+# Flipper example contract
 
-This simple demo contract. It has a `u32` value that can
-be incremented by the input value using the `inc` message.
-
-### How to use it
+This simple demo contract. It has a `bool` value that can
+alter between `true` and `false` using the `flip` message.
 
 **It uses:**
 

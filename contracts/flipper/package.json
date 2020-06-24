@@ -1,0 +1,22 @@
+{
+  "name": "@substrate/flipper",
+  "version": "0.0.1",
+  "description": "Example AS-Substrate flipper contract",
+  "author": "Stefanie Doll",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build:optimized": "asc assembly/index.ts -b build/flipper-raw.wasm -t build/flipper-raw.wat --importMemory --noAssert --use abort= --optimize",
+    "build:sh": "./build.sh",
+    "build:tsd": "asc assembly/index.ts -d build/index.d.ts",
+    "build": "yarn build:optimized && yarn build:tsd && yarn build:sh",
+    "clean": "rm -rf node_modules && rm -rf build"
+  },
+  "dependencies": {
+    "@as-pect/cli": "^4.0.0",
+    "@substrate/as-utils": "0.0.1",
+    "as-bignum": "^0.2.2",
+    "assemblyscript": "0.12.3"
+  }
+}
