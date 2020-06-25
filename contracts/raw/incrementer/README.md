@@ -1,6 +1,6 @@
-# Flipper example
+# Incrementer example
 
-A raw Parity Substrate smart contract example written in AssemblyScript
+A basic Parity Substrate smart contract written in AssemblyScript
 
 This contract does not use the functions provided by the `@substrate/as-contract` package.
 It is a stand-alone AssemblyScript contract that can be executed on any substrate chain that includes the contracts pallet.

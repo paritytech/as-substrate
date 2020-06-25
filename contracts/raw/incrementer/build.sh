@@ -2,7 +2,7 @@
 
 set -e
 
-PROJNAME=flipper
+PROJNAME=incrementer
 
 cat build/$PROJNAME-raw.wat | sed "s/(import \"env\" \"memory\" (memory \$0 1))/(import \"env\" \"memory\" (memory \$0 16 16))/" > build/$PROJNAME-fixed.wat
 

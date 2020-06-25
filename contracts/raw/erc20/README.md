@@ -1,4 +1,4 @@
-# Flipper example
+# ERC-20 example
 
 A raw Parity Substrate smart contract example written in AssemblyScript
 
