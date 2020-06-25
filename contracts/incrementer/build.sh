@@ -10,7 +10,6 @@ wat2wasm build/$PROJNAME-fixed.wat -o build/$PROJNAME-fixed.wasm
 
 wasm-prune --exports call,deploy build/$PROJNAME-fixed.wasm build/$PROJNAME.wasm
 
-rm -rf build/$PROJNAME-fixed.wasm
-rm -rf build/$PROJNAME-fixed.wat
+rm -rf build/$PROJNAME-fixed.wasm build/$PROJNAME-fixed.wat
 
 wasm2wat build/$PROJNAME.wasm -o build/$PROJNAME.wat 
