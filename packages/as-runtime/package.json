@@ -1,0 +1,28 @@
+{
+  "name": "@substrate/as-runtime",
+  "version": "0.0.1",
+  "description": "A Polkadot Runtime in AssemblyScript",
+  "author": "Stefanie Doll",
+  "license": "Apache-2.0",
+  "ascMain": "assembly/index.ts",
+  "scripts": {
+    "build:optimized": "asc assembly/index.ts -b build/runtime.wasm -t build/runtime.wat --importMemory --noAssert --use abort=  --sourceMap --validate --optimize",
+    "build:sh": "./build.sh",
+    "build:tsd": "asc assembly/index.ts -d build/index.d.ts",
+    "build": "yarn build:tsd && yarn build:optimized && yarn build:sh",
+    "clean": "rm -rf node_modules && rm -rf build",
+    "test": "asp"
+  },
+  "dependencies": {
+    "@assemblyscript/loader": "^0.9.1",
+    "@as-pect/cli": "^4.0.0",
+    "@substrate/as-utils": "0.0.1",
+    "as-bignum": "^0.2.2",
+    "assemblyscript": "0.12.3"
+  },
+  "releaseFiles": [
+    "assembly/",
+    "README.md",
+    "LICENSE"
+  ]
+}
