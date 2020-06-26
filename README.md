@@ -1,6 +1,8 @@
 # AS-Substrate
 
 A collection of resources to develop proof of concept projects for Substrate in AssemblyScript.
+AssemblyScript compiles a strict subset of TypeScript to WebAssembly using Binaryen.
+
 At the moment, this repository is mainly home for a collection of smart contract examples and a small smart contract library to write contracts for [Substrates contracts pallet](https://github.com/paritytech/substrate/tree/master/frame/contracts), but it might be extended with more examples in the future.
 
 ## Setup
@@ -9,9 +11,11 @@ This repository is using yarn and yarn workspaces. You also need a fairly up-to-
 
 ## Getting started
 
-1. Clone the whole `as-substrate` repository
-   ``
-   \$ git clone https://github.com/paritytech/as-substrate.git
+1. Clone the whole `as-substrate` repository including the submodules.
+
+```
+$ git clone https://github.com/paritytech/as-substrate.git
+```
 
 2. Install all dependencies
 

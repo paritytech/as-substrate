@@ -1,8 +1,8 @@
 # /as-substrate/packages
 
-This folder contains two packages.
+This folder contains two packages. They're not getting pubished to npm
 
-## `as-contracts`
+## `@substrate/as-contracts`
 A small library to write Substrate smart contracts in AssemblyScript. 
 The package is not getting published to npmjs package manager, but you can add it to the dependencies of your project directly from GitHub:
 
