@@ -1,15 +1,19 @@
-# /as-substrate/packages
+# Packages
 
-This folder contains two packages.
+This folder contains different library packages.
 
-## `as-contracts`
-A small library to write Substrate smart contracts in AssemblyScript. 
+## `@substrate/as-contracts`
+
+A small library to write Substrate smart contracts in AssemblyScript.
 The package is not getting published to npmjs package manager, but you can add it to the dependencies of your project directly from GitHub:
 
-**Installation:**
-```
-$ yarn add
-```
+## `@substrate/as-utils`
+
+A collection of utility functions in AssemblyScript.
+
+## `@substrate/as-runtime`
+
+A basic setup for a runtime in AssemblyScript. This project is a stub and just kept for reference.
 
 ## Disclaimer
 

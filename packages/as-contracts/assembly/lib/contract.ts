@@ -2,17 +2,14 @@
 /// <reference path="../../../../node_modules/@substrate/as-utils/build/index.d.ts" />
 
 import { u128 } from "as-bignum";
-import { toBytes } from '@substrate/as-utils';
 
-// // Implementation missing for:
-
-// import {
-//   ext_call,
-//   ext_deposit_event,
-//   ext_instantiate,
-//   ext_restore_to,
-//   ext_return
-// } from "../env";
+// The following pallet contracts host functions are not implemented yet:
+// 
+// ext_call,
+// ext_deposit_event,
+// ext_instantiate,
+// ext_restore_to,
+// ext_return
 
 import {
   ext_address,
@@ -90,6 +87,46 @@ export namespace contract {
    */
   export function getGasPrice(gas: u64): Uint8Array {
     ext_gas_price(gas);
+    return storage.getScratchBuffer();
+  }
+
+  /**
+   * @name getMinimumBalance
+   * @description
+   * Returns the minimum balance (a.k.a. existential deposit) of the current account.
+   */
+  export function getMinimumBalance(): Uint8Array {
+    ext_minimum_balance();
+    return storage.getScratchBuffer();
+  }
+
+  /**
+   * @name getRandomNumber
+   * @description
+   * Returns the random number for the current block for the given subject into the scratch buffer
+   */
+  export function getRandomNumber(): Uint8Array {
+    ext_random();
+    return storage.getScratchBuffer();
+  }
+
+  /**
+   * @name getRentAllowance
+   * @description
+   * Returns the rent allowance of the contract
+   */
+  export function getRentAllowance(): Uint8Array {
+    ext_rent_allowance();
+    return storage.getScratchBuffer();
+  }
+
+  /**
+   * @name getTimestamp
+   * @description
+   * Returns the latest block timestamp .
+   */
+  export function getTimestamp(): Uint8Array {
+    ext_now();
     return storage.getScratchBuffer();
   }
 

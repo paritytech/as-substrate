@@ -2,6 +2,26 @@
 
 A small library to Write smart contracts for Substrate in AssemblyScript.
 
+## Getting started
+
+Install all dependencies
+
+```
+$ yarn
+```
+
+Compile the package to wasm
+
+```
+$ yarn build
+```
+
+To clean up the package, run:
+
+```
+$ yarn clean
+```
+
 ## Disclaimer
 
 Everything in this repository is highly experimental and should not be used for any professional or financial purposes.
