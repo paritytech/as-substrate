@@ -1,26 +1,7 @@
-# @substrate/as-contracts
+# Example contracts
 
-A small library to Write smart contracts for Substrate in AssemblyScript.
-
-## Getting started
-
-Install all dependencies
-
-```
-$ yarn
-```
-
-Compile the package to wasm
-
-```
-$ yarn build
-```
-
-To clean up the package, run:
-
-```
-$ yarn clean
-```
+This folder contains a number of example contracts that make use of the [`as-contracts`](../packages/as-contracts) package.
+The compiled example contracts can be deployed and executed on any Substrate chain that includes the contracts pallet.
 
 ## Disclaimer
 
