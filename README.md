@@ -60,6 +60,8 @@ In your projects, you can then import the as-contracts functions directly from t
 
 **The recommended way of writing smart contracts is using the [Rust Smart Contract Language `ink!`](https://github.com/paritytech/ink).**
 
+Another way of writing Smart Contracts for Substrate is using the [Solidity to Wasm compiler Solang](https://solang.readthedocs.io/en/latest/running.html#using-solang-with-substrate).
+
 ## Disclaimer
 
 Everything in this repository is highly experimental and should not be used for any professional or financial purposes.
