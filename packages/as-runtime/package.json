@@ -6,7 +6,7 @@
   "license": "Apache-2.0",
   "ascMain": "assembly/index.ts",
   "scripts": {
-    "build:optimized": "asc assembly/index.ts -b build/runtime.wasm -t build/runtime.wat --importMemory --noAssert --use abort=  --sourceMap --validate --optimize",
+    "build:optimized": "asc assembly/index.ts -b build/as-runtime.wasm -t build/as-runtime.wat --importMemory --noAssert --use abort=  --sourceMap --optimize",
     "build:sh": "./build.sh",
     "build:tsd": "asc assembly/index.ts -d build/index.d.ts",
     "build": "yarn build:tsd && yarn build:optimized && yarn build:sh",
